@@ -2,13 +2,29 @@ import { Todo } from '../types/todo';
 
 type Props = {
   todoList: Todo[];
+  changeCompleted: (id: string) => void;
 };
 
-export const TodoList = ({ todoList }: Props) => {
+export const TodoList = ({ todoList, changeCompleted }: Props) => {
   return (
     <div className="space-y-3">
       {todoList.map((todo) => (
-        <p key={todo.id}>{todo.title}</p>
+        <div
+          key={todo.id}
+          className="flex items-center gap-3 hover:cursor-pointer hover:bg-slate-300"
+        >
+          <div className="flex items-center">
+            <input
+              type="checkbox"
+              className="size-5"
+              checked={todo.completed}
+              onChange={() => changeCompleted(todo.id)}
+            />
+            <span className={`${todo.completed ? 'line-through' : ''}`}>
+              {todo.title}
+            </span>
+          </div>
+        </div>
       ))}
     </div>
   );
