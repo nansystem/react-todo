@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { TodoList } from '../../src/components/TodoList';
-import { Todo } from '../../src/types/todo';
+import { TodoList } from '@/components/TodoList';
+import { Todo } from '@/types/todo';
 
 describe('TodoList', () => {
   const mockTodos: Todo[] = [
