@@ -25,11 +25,11 @@ export const TodoList = ({ todoList, changeCompleted, deleteTodo }: Props) => {
             <span className={`${todo.completed ? 'line-through' : ''}`}>
               {todo.title}
             </span>
-            <button className="rounded bg-gray-200 p-2 transition-colors hover:bg-gray-300">
-              <Trash2
-                className="size-5 text-gray-500"
-                onClick={() => deleteTodo(todo.id)}
-              />
+            <button
+              className="rounded bg-gray-200 p-2 transition-colors hover:bg-gray-300"
+              onClick={() => deleteTodo(todo.id)}
+            >
+              <Trash2 className="size-5 text-gray-500" />
             </button>
           </div>
         </div>
